@@ -27,9 +27,9 @@ CREATE TABLE eleve
 
 CREATE TABLE matiere
 (
-  IdMatiere INT AUTO_INCREMENT
-    PRIMARY KEY,
-  Nom       VARCHAR(50) NOT NULL
+  IdMatiere INT AUTO_INCREMENT,
+  Nom       VARCHAR(50) NOT NULL,
+  PRIMARY KEY (IdMatiere)
 )
   ENGINE = InnoDB;
 
@@ -85,15 +85,26 @@ CREATE INDEX Professeur_Matiere0_FK
 
 CREATE TABLE questionnaire
 (
-  IdQuestionnaire INT AUTO_INCREMENT
-    PRIMARY KEY,
+  IdQuestionnaire INT AUTO_INCREMENT,
   Theme           VARCHAR(50) NOT NULL,
+  IdMatiere         VARCHAR(50) NOT NULL,
+  PRIMARY KEY (IdQuestionnaire),
+  FOREIGN KEY (IdMatiere) REFERENCES matiere (IdMatiere)
+)
+  ENGINE = InnoDB;
+
+CREATE TABLE questions
+(
+  IdQuestion INT NOT NULL AUTO_INCREMENT,
+  IdQuestionnaire INT NOT NULL ,
+  Question        VARCHAR(50) NOT NULL,
   BonneR          VARCHAR(50) NOT NULL,
   Reponse1        VARCHAR(50) NOT NULL,
   Reponse2        VARCHAR(50) NOT NULL,
-  Reponse3        VARCHAR(50) NOT NULL
-)
-  ENGINE = InnoDB;
+  Reponse3        VARCHAR(50) NOT NULL,
+  PRIMARY KEY (IdQuestion),
+  FOREIGN KEY (IdQuestionnaire) REFERENCES questionnaire (IdQuestionnaire)
+)ENGINE = InnoDB;
 
 ALTER TABLE appartenir
   ADD CONSTRAINT Appartenir_questionnaire0_FK
