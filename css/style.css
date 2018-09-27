@@ -1,0 +1,21 @@
+.contenu {
+    text-align:  center;
+    width: 500px;
+    margin-top:100px;
+}
+
+.book {
+    max-width: 28%;
+    position: absolute;
+    left:  50px;
+    top: 45%;
+    transform: rotate(-20deg);
+}
+
+.book2 {
+    max-width: 28%;
+    position: absolute;
+    left:  70%;
+    top: 45%;
+    transform: rotate(20deg);
+}
