@@ -33,3 +33,13 @@ FROM personne,eleve where personne.IdPersonne=eleve.IdPersonne;
     AS SELECT personne.IdPersonne, personne.Nom, personne.Mdp, personne.Photo, Matiere.nom Matiere
     FROM personne,Professeur,Matiere where personne.IdPersonne=Professeur.IdPersonne ;
 
+INSERT INTO `questionnaire` (`IdQuestionnaire`, `Theme`)
+VALUES (NULL, 'Nombre en lettre');
+
+
+SET @idQuestionnaire := (SELECT LAST_INSERT_ID() );
+INSERT INTO `questions` (`IdQuestion`, `IdQuestionnaire`,`Question`, `BonneR`, `Reponse1`, `Reponse2`, `Reponse3`)
+VALUES (NULL, @idQuestionnaire,'Comment ecrit-on 11 ?', 'Onze', 'Honze', 'Onse', 'Onnze');
+INSERT INTO `questions` (`IdQuestion`, `IdQuestionnaire`,`Question`, `BonneR`, `Reponse1`, `Reponse2`, `Reponse3`)
+VALUES (NULL, @idQuestionnaire,'Comment ecrit-on 100 ?', 'Sans', 'Cents', 'Cent', 'Cen');
+
