@@ -19,3 +19,7 @@
     top: 45%;
     transform: rotate(20deg);
 }
+
+.form-group {
+    margin-top: 1rem;
+}
