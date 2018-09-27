@@ -8,18 +8,34 @@
 
 class Modele
 {
-    private $pdo;
-    public function __construct($serveur, $bdd, $user, $mdp)
+    private $base;
+
+    public function __construct($base)
     {
-        $this->pdo = null;
-        try
+        $this->base =$base;
+    }
+
+    function selectAllQuestion(){
+        $donnee_question = array();
+        $i = 0;
+        $req = $this->base->query("SELECT * FROM `questions` WHERE `IdQuestionnaire`=1");
+
+        while($valeur = $req->fetch())
         {
-            $this->pdo = new PDO("mysql:host=".$serveur.";dbname=".$bdd,$user,$mdp);
-            $this->pdo->exec("SET CHARACTER SET utf8");
+            $question = new Question();
+
+            $question->setQuestion($valeur['Question']);
+            $question->setBonneRep($valeur['BonneR']);
+            $question->setRep1($valeur['Reponse1']);
+            $question->setRep2($valeur['Reponse2']);
+            $question->setRep3($valeur['Reponse3']);
+
+            $donnee_question[$i] = $question;
+            var_dump($donnee_question[$i]);
+            $i++;
+
+
         }
-        catch(Exception $exp)
-        {
-            echo "Erreur de connexion a la base de donnee";
-        }
+        return $donnee_question;
     }
 }
