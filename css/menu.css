@@ -1,0 +1,11 @@
+.nav-item
+{
+    background-color: #EDB613;
+    border: 1px solid #f6e8bc;
+    border-radius: 10px 10px 0 0;
+}
+
+.nav-item a
+{
+    color: white;
+}
