@@ -1,13 +1,13 @@
 .contenu {
-    text-align:  center;
+    text-align: center;
     width: 500px;
-    margin-top:100px;
+    margin-top: 100px;
 }
 
 .book {
     max-width: 28%;
     position: absolute;
-    left:  50px;
+    left: 50px;
     top: 45%;
     transform: rotate(-20deg);
 }
@@ -15,11 +15,60 @@
 .book2 {
     max-width: 28%;
     position: absolute;
-    left:  70%;
+    left: 70%;
     top: 45%;
     transform: rotate(20deg);
 }
 
 .form-group {
     margin-top: 1rem;
+}
+
+.childPhoto {
+    max-width: 240px;
+}
+
+.center {
+    text-align: center;
+}
+
+
+.detailLast {
+    border: 1px solid black;
+}
+
+.last {
+    margin: 15px;
+}
+
+.lastNote {
+    margin-top: 30px;
+}
+
+.separate {
+    border-left: 1px solid black;
+}
+
+.welcome {
+    margin-top: 20%;
+}
+
+.btn-primary {
+    background-color: #EDB613;
+    border: 1px solid #EDB613;
+    color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #bd8524;
+    border: 1px solid #bd8524;
+    transition-duration: 0.6s
+}
+
+.choix .btn-primary {
+    margin: 40px;
+    min-width: 300px;
+    padding: 25px;
 }
