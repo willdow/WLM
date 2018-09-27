@@ -87,8 +87,10 @@ CREATE TABLE questionnaire
 (
   IdQuestionnaire INT AUTO_INCREMENT
     PRIMARY KEY,
-  Theme           VARCHAR(50) NOT NULL
-
+  Theme           VARCHAR(50) NOT NULL,
+  IdMatiere         VARCHAR(50) NOT NULL,
+  PRIMARY KEY (IdQuestionnaire),
+  FOREIGN KEY (IdMatiere) REFERENCES matiere (IdMatiere)
 )
   ENGINE = InnoDB;
 
