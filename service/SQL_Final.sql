@@ -87,13 +87,23 @@ CREATE TABLE questionnaire
 (
   IdQuestionnaire INT AUTO_INCREMENT
     PRIMARY KEY,
-  Theme           VARCHAR(50) NOT NULL,
+  Theme           VARCHAR(50) NOT NULL
+
+)
+  ENGINE = InnoDB;
+
+CREATE TABLE questions
+(
+  IdQuestion INT NOT NULL AUTO_INCREMENT,
+  IdQuestionnaire INT NOT NULL ,
+  Question        VARCHAR(50) NOT NULL,
   BonneR          VARCHAR(50) NOT NULL,
   Reponse1        VARCHAR(50) NOT NULL,
   Reponse2        VARCHAR(50) NOT NULL,
-  Reponse3        VARCHAR(50) NOT NULL
-)
-  ENGINE = InnoDB;
+  Reponse3        VARCHAR(50) NOT NULL,
+  PRIMARY KEY (IdQuestion),
+  FOREIGN KEY (IdQuestionnaire) REFERENCES questionnaire (IdQuestionnaire)
+)ENGINE = InnoDB;
 
 ALTER TABLE appartenir
   ADD CONSTRAINT Appartenir_questionnaire0_FK
