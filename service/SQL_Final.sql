@@ -27,9 +27,9 @@ CREATE TABLE eleve
 
 CREATE TABLE matiere
 (
-  IdMatiere INT AUTO_INCREMENT
-    PRIMARY KEY,
-  Nom       VARCHAR(50) NOT NULL
+  IdMatiere INT AUTO_INCREMENT,
+  Nom       VARCHAR(50) NOT NULL,
+  PRIMARY KEY (IdMatiere)
 )
   ENGINE = InnoDB;
 
@@ -85,8 +85,7 @@ CREATE INDEX Professeur_Matiere0_FK
 
 CREATE TABLE questionnaire
 (
-  IdQuestionnaire INT AUTO_INCREMENT
-    PRIMARY KEY,
+  IdQuestionnaire INT AUTO_INCREMENT,
   Theme           VARCHAR(50) NOT NULL,
   IdMatiere         VARCHAR(50) NOT NULL,
   PRIMARY KEY (IdQuestionnaire),
