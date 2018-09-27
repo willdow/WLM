@@ -1,17 +1,4 @@
-/*
-#Test INSERTION 
-INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Jean','Lario','123','chat.jpg');
- SET @idpersonne := (SELECT LAST_INSERT_ID() ); 
-INSERT INTO eleve(Classe,IdPersonne)
- VALUES ( 'CP',@idpersonne); 
-#Insertion Professeur il faut ajouter une matiere avant
-INSERT INTO matiere(Nom) VALUES('Fraçais');
 
-INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Lucie','Lant','123','chat.jpg');
- SET @idpersonne := (SELECT LAST_INSERT_ID() ); 
-INSERT INTO Professeur(IdPersonne,IdMatiere_Pratiquer)
- VALUES ( @idpersonne,'1'); 
- #*/
  #Insertion final
 
  INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Jean','Lario','123','chat.jpg');
@@ -27,14 +14,14 @@ INSERT INTO eleve(Classe,IdPersonne)
 ######
 INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Marc','Legre','123','chat.jpg');
  SET @idpersonne := (SELECT LAST_INSERT_ID() ); 
-INSERT INTO eleve(Classe,IdPersonne)
- VALUES ( 'CP',@idpersonne); 
+INSERT INTO eleve(Classe,TypeP,IdPersonne)
+ VALUES ( 'CP','Eleve',@idpersonne);
  #####
- INSERT INTO matiere(Nom) VALUES('Fraçais');
+ INSERT INTO matiere(Nom) VALUES('Français');
  INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Lucie','Lant','123','chat.jpg');
  SET @idpersonne := (SELECT LAST_INSERT_ID() ); 
-INSERT INTO Professeur(IdPersonne,IdMatiere_Pratiquer)
- VALUES ( @idpersonne,'1'); 
+INSERT INTO Professeur(IdPersonne,TypeProf,IdMatiere_Pratiquer)
+ VALUES ( @idpersonne,"Prof",'1');
 
 # Vue complete des élève
  CREATE VIEW EleveInfo
@@ -43,6 +30,6 @@ FROM personne,eleve where personne.IdPersonne=eleve.IdPersonne;
   
 # Vue complete des Professeur
  CREATE VIEW ProfesseurInfo
-AS SELECT personne.IdPersonne, personne.Nom, personne.Mdp, personne.Photo, Matiere.nom Matiere
-FROM personne,Professeur,Matiere where personne.IdPersonne=Professeur.IdPersonne ;
+    AS SELECT personne.IdPersonne, personne.Nom, personne.Mdp, personne.Photo, Matiere.nom Matiere
+    FROM personne,Professeur,Matiere where personne.IdPersonne=Professeur.IdPersonne ;
 
