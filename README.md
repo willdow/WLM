@@ -1,2 +1,2 @@
 # WLM
-School Quiz
+School Quizz
