@@ -6,7 +6,8 @@
 <body>
     <?php include('../menu.php'); ?>
     <div class="container ">
-        <div class="row choix welcome">
+    <h1 class="titreMatiere welcome">Les Mathématiques</h1>
+        <div class="row choix">
             <a type="button" class="btn btn-primary btn-lg" href="./addition.php">Quizz 1 : Addition</a>
             <a type="button" class="btn btn-primary btn-lg">Quizz 2 : Soustraction</a>
             <a type="button" class="btn btn-primary btn-lg">Quizz 3 : Multiplication</a>
