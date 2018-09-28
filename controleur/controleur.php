@@ -16,14 +16,16 @@ class Controleur
         $_SESSION['nom'] = "";
         $_SESSION['type'] = "";
 
+        $modele = new Modele();
+
+        $infoPersonne = $modele->selectPersonneWhere($id);
 
 
 
 
 
 
-
-        /*$resultat = $unModele->selectWhere("count(*) as nb, pseudo, id_personne ",$recherche, " where ", " group by id_personne ");
+        $resultat = $unModele->selectWhere("count(*) as nb, pseudo, id_personne ",$recherche, " where ", " group by id_personne ");
         if ($resultat[0]["nb"] == 1) {
             $_SESSION['mail'] = $mail;
             $_SESSION['pseudo'] = $resultat["0"]["pseudo"];
@@ -47,7 +49,7 @@ class Controleur
         } // sinon, alors la, il y a un gros problème :)
         else {
             $erreur = 'Problème dans la base de données : plusieurs membres ont les mêmes identifiants de connexion.';
-            e*/cho $erreur;
+            echo $erreur;
         }
     }
 
