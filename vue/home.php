@@ -58,3 +58,45 @@
 </body>
 
 </html>
+
+
+<?php
+$_SESSION['id'] = 1;
+
+if ($_SESSION['id'] <> "")
+{
+    if (isset($_GET['page']))
+    {
+        echo "aa";
+        $page = $_GET['page'];
+    }
+    else
+    {
+        $page = "NAN";
+    }
+
+
+    switch ($page) {
+        case "accueil":
+            header('Location: home.php');
+            break;
+
+        case "math":
+
+            //$matiere = "math";
+            header('Location: choix.php?idMatiere=2');
+            break;
+
+        case "francais":
+            header('Location: choix.php?idMatiere=1');
+            break;
+
+        case "anglais":
+            header('Location: choix.php?idMatiere=3');
+            break;
+    }
+}
+
+
+
+?>

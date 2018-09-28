@@ -8,3 +8,14 @@
     <link rel="stylesheet" type="text/css" href="./../css/style.css" />
     <link rel="stylesheet" type="text/css" href="./../css/menu.css" />
 </head>
+
+<?php
+
+include_once ("service/connect.php");
+include_once ("modele/Modele.php");
+include_once ("modele/Question.php");
+include_once ("modele/Personne.php");
+include_once ("modele/Questionnaire.php");
+
+
+?>

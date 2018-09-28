@@ -88,3 +88,12 @@
     background-color: #EDB613;
 
 }
+
+.custom-control-label
+{
+     color: #EDB613 !important;
+     border: 1px solid #EDB613;
+     padding: 30px 100px;
+     max-width: 300px;
+     border-radius: 48%;
+ }

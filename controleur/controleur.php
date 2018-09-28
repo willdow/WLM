@@ -16,6 +16,8 @@ class Controleur
         $_SESSION['nom'] = "";
         $_SESSION['type'] = "";
 
+
+
         $modele = new Modele();
 
         $infoPersonne = $modele->selectPersonneWhere($id);
