@@ -4,11 +4,11 @@
 
 INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Jean','Lario','123','child.svg');
   SET @idpersonne := (SELECT LAST_INSERT_ID() );
-INSERT INTO eleve(Classe,IdPersonne) VALUES ( 'CP',@idpersonne);
+INSERT INTO eleve(Classe,TypeP,IdPersonne) VALUES ( 'CP','Eleve',@idpersonne);
 
 INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Louis','Lasalle','123','child.svg');
   SET @idpersonne := (SELECT LAST_INSERT_ID() );
-INSERT INTO eleve(Classe,IdPersonne)VALUES ( 'CE',@idpersonne);
+INSERT INTO eleve(Classe,TypeP,IdPersonne)VALUES ( 'CE','Eleve',@idpersonne);
 
 INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Marc','Legre','123','child.svg');
   SET @idpersonne := (SELECT LAST_INSERT_ID() );
@@ -18,11 +18,11 @@ INSERT INTO eleve(Classe,TypeP,IdPersonne) VALUES ( 'CP','Eleve',@idpersonne);
 
 INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Lucie','Lant','123','parent.svg');
   SET @idpersonne := (SELECT LAST_INSERT_ID() );
-INSERT INTO Professeur(IdPersonne,TypeProf,IdMatiere_Pratiquer) VALUES ( @idpersonne,"Prof",'1');
+INSERT INTO professeur(IdPersonne,TypeProf,IdMatiere_Pratiquer) VALUES ( @idpersonne,"Prof",1);
 
 INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Hanna','Boul','123','parent.svg');
   SET @idpersonne := (SELECT LAST_INSERT_ID() );
-INSERT INTO Professeur(IdPersonne,TypeProf,IdMatiere_Pratiquer) VALUES ( @idpersonne,"Prof",'2');
+INSERT INTO professeur(IdPersonne,TypeProf,IdMatiere_Pratiquer) VALUES ( @idpersonne,"Prof",2);
 
 #Insert matiere
 
