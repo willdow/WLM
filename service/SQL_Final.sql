@@ -37,19 +37,7 @@ ALTER TABLE appartenir
   ADD CONSTRAINT Appartenir_Matiere_FK
 FOREIGN KEY (IdMatiere) REFERENCES matiere (IdMatiere);
 
-CREATE TABLE passer
-(
-  IdQuestionnaire INT NOT NULL,
-  IdPersonne      INT NOT NULL,
-  IdEleve         INT NOT NULL,
-  PRIMARY KEY (IdQuestionnaire, IdPersonne, IdEleve),
-  CONSTRAINT Passer_Eleve0_FK
-  FOREIGN KEY (IdPersonne, IdEleve) REFERENCES eleve (IdPersonne, IdEleve)
-)
-  ENGINE = InnoDB;
 
-CREATE INDEX Passer_Eleve0_FK
-  ON passer (IdPersonne, IdEleve);
 
 CREATE TABLE personne
 (
@@ -87,7 +75,7 @@ CREATE TABLE questionnaire
 (
   IdQuestionnaire INT AUTO_INCREMENT,
   Theme           VARCHAR(50) NOT NULL,
-  IdMatiere         VARCHAR(50) NOT NULL,
+  IdMatiere         INT NOT NULL,
   PRIMARY KEY (IdQuestionnaire),
   FOREIGN KEY (IdMatiere) REFERENCES matiere (IdMatiere)
 )
@@ -106,6 +94,19 @@ CREATE TABLE questions
   FOREIGN KEY (IdQuestionnaire) REFERENCES questionnaire (IdQuestionnaire)
 )ENGINE = InnoDB;
 
+CREATE TABLE passer
+(
+  IdQuestionnaire INT NOT NULL,
+  IdPersonne      INT NOT NULL,
+  PRIMARY KEY (IdQuestionnaire, IdPersonne),
+  CONSTRAINT Passer_Eleve0_FK
+  FOREIGN KEY (IdPersonne) REFERENCES eleve (IdPersonne)
+)
+  ENGINE = InnoDB;
+
+CREATE INDEX Passer_Eleve0_FK
+  ON passer (IdPersonne);
+
 ALTER TABLE appartenir
   ADD CONSTRAINT Appartenir_questionnaire0_FK
 FOREIGN KEY (IdQuestionnaire) REFERENCES questionnaire (IdQuestionnaire);
@@ -114,26 +115,27 @@ ALTER TABLE passer
   ADD CONSTRAINT Passer_questionnaire_FK
 FOREIGN KEY (IdQuestionnaire) REFERENCES questionnaire (IdQuestionnaire);
 
-CREATE VIEW eleveinfo AS
-  SELECT
-    `ecolewlm`.`personne`.`IdPersonne` AS `IdPersonne`,
-    `ecolewlm`.`personne`.`Nom`        AS `Nom`,
-    `ecolewlm`.`personne`.`Mdp`        AS `Mdp`,
-    `ecolewlm`.`personne`.`Photo`      AS `Photo`,
-    `ecolewlm`.`eleve`.`Classe`        AS `Classe`
-  FROM `ecolewlm`.`personne`
-    JOIN `ecolewlm`.`eleve`
-  WHERE (`ecolewlm`.`personne`.`IdPersonne` = `ecolewlm`.`eleve`.`IdPersonne`);
-
-CREATE VIEW professeurinfo AS
-  SELECT
-    `ecolewlm`.`personne`.`IdPersonne` AS `IdPersonne`,
-    `ecolewlm`.`personne`.`Nom`        AS `Nom`,
-    `ecolewlm`.`personne`.`Mdp`        AS `Mdp`,
-    `ecolewlm`.`personne`.`Photo`      AS `Photo`,
-    `ecolewlm`.`matiere`.`Nom`         AS `Matiere`
-  FROM `ecolewlm`.`personne`
-    JOIN `ecolewlm`.`professeur`
-    JOIN `ecolewlm`.`matiere`
-  WHERE (`ecolewlm`.`personne`.`IdPersonne` = `ecolewlm`.`professeur`.`IdPersonne`);
+# CREATE VIEW eleveinfo AS
+#   SELECT
+#     `ecolewlm`.`personne`.`IdPersonne` AS `IdPersonne`,
+#     `ecolewlm`.`personne`.`Nom`        AS `Nom`,
+#     `ecolewlm`.`personne`.`Mdp`        AS `Mdp`,
+#     `ecolewlm`.`personne`.`Photo`      AS `Photo`,
+#     `ecolewlm`.`eleve`.`Classe`        AS `Classe`
+#   FROM `ecolewlm`.`personne`
+#     JOIN `ecolewlm`.`eleve`
+#   WHERE (`ecolewlm`.`personne`.`IdPersonne` = `ecolewlm`.`eleve`.`IdPersonne`);
+#
+# CREATE VIEW professeurinfo AS
+#   SELECT
+#     `ecolewlm`.`personne`.`IdPersonne` AS `IdPersonne`,
+#     `ecolewlm`.`personne`.`Nom`        AS `Nom`,
+#     `ecolewlm`.`personne`.`Mdp`        AS `Mdp`,
+#     `ecolewlm`.`personne`.`Photo`      AS `Photo`,
+#     `ecolewlm`.`matiere`.`Nom`         AS `Matiere`
+#   FROM `ecolewlm`.`personne`
+#     JOIN `ecolewlm`.`professeur`
+#     JOIN `ecolewlm`.`matiere`
+#   WHERE (`ecolewlm`.`personne`.`IdPersonne` = `ecolewlm`.`professeur`.`IdPersonne`);
+#
 
