@@ -64,7 +64,7 @@
 .btn-primary:focus {
     background-color: #bd8524;
     border: 1px solid #bd8524;
-    transition-duration: 0.6s
+    transition-duration: 0.6s;
 }
 
 .choix .btn-primary {
@@ -79,12 +79,24 @@
     padding: 30px 100px;
     max-width: 300px;
     border-radius: 48%;
+    margin: 15px 30px;
 
 }
 
-.btnReponse:hover {
+.btnReponse:hover,
+.btnReponse:active,
+.btnReponse:focus {
 
     color: white !important;
     background-color: #EDB613;
+    transition: 0.6s;
 
+}
+
+.titreQuestionnaire {
+    margin-top: 50px;
+}
+
+.question {
+    margin-bottom: 40px;
 }
