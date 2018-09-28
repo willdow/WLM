@@ -72,3 +72,19 @@
     min-width: 300px;
     padding: 25px;
 }
+
+.btnReponse {
+    color: #EDB613 !important;
+    border: 1px solid #EDB613;
+    padding: 30px 100px;
+    max-width: 300px;
+    border-radius: 48%;
+
+}
+
+.btnReponse:hover {
+
+    color: white !important;
+    background-color: #EDB613;
+
+}
