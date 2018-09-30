@@ -6,3 +6,7 @@ School Quizz
 * Appuyez sur **Se connecter**
 * Choissisez l'onglet **Mathématiques**
 * Prenez le **Quizz 1 : Addition**
+
+
+
+(l'utilisation de chrome n'est pas recommandé)
