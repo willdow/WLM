@@ -14,11 +14,7 @@
                 <i class="far fa-user"></i>
                 Ton ID : <input class="form-control" type="text" name="id" id="id" required /><br />
                 <i class="fas fa-unlock-alt"></i>
-<<<<<<< HEAD
-                Ton Mot de passe : <input class="form-control" type="password" name="prenom" id="prenom" required/>
-=======
-                Ton Mot de passe : <input class="form-control" type="text" name="mdp" id="mdp" />
->>>>>>> e156da6f7b8a8032665d8b1057ccc9c1090cba46
+                Ton Mot de passe : <input class="form-control" type="password" name="mdp" id="mdp" required/>
                 <p id="erreurPrenom"></p><br />
                 <input class="btn btn-primary" id="valider" name="valider" type="submit" value="Se connecter" />
             </div>
