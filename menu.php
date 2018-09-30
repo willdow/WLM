@@ -15,7 +15,7 @@
             <a class="nav-link" id="profile-tab" href="home.php?page=anglais">Anglais</a>
         </li>
         <?php
-        if (isset($_SESSION['type']) == "Prof")
+        if ($_SESSION['TypeP'] == "Prof")
         {
             echo "<a class=\"nav-link\" id=\"profile-tab\" href=\"home.php?page=gestion\"><li>Gestion</li></a>";
             echo "<a class=\"nav-link\" id=\"profile-tab\" href=\"home.php?page=notes\"><li>Notes</li></a>";

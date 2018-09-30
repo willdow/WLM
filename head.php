@@ -16,6 +16,7 @@ include_once ("modele/Modele.php");
 include_once ("modele/Question.php");
 include_once ("modele/Personne.php");
 include_once ("modele/Questionnaire.php");
+include_once ("controleur/Controleur.php");
 
 
 ?>
