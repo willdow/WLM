@@ -11,7 +11,7 @@ class Question
     private $id;
     private $question,$bonneRep,$rep1,$rep2,$rep3;
 
-    function __construct($question,$bonneRep,$rep1,$rep2,$rep3)
+    function __construct()
     {
         $this->id = 0;
         $this->question = "";

@@ -5,7 +5,6 @@
     include('../head.php');
     session_start();
 ?>
-
 <body>
     <div class="container contenu">
         <img class="logo" src="../img/logo.png" alt="logo de WLM">
@@ -15,7 +14,7 @@
                 <i class="far fa-user"></i>
                 Ton ID : <input class="form-control" type="text" name="id" id="id" /><br />
                 <i class="fas fa-unlock-alt"></i>
-                Ton Mot de passe : <input class="form-control" type="text" name="prenom" id="prenom" />
+                Ton Mot de passe : <input class="form-control" type="text" name="mdp" id="mdp" />
                 <p id="erreurPrenom"></p><br />
                 <input class="btn btn-primary" id="valider" name="valider" type="submit" value="Se connecter" />
             </div>
