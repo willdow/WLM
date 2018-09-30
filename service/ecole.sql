@@ -1,34 +1,34 @@
-
-
-#Insert eleves
-
-INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Jean','Lario','123','child.svg');
-  SET @idpersonne := (SELECT LAST_INSERT_ID() );
-INSERT INTO eleve(Classe,TypeP,IdPersonne) VALUES ( 'CP','Eleve',@idpersonne);
-
-INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Louis','Lasalle','123','child.svg');
-  SET @idpersonne := (SELECT LAST_INSERT_ID() );
-INSERT INTO eleve(Classe,TypeP,IdPersonne)VALUES ( 'CE','Eleve',@idpersonne);
-
-INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Marc','Legre','123','child.svg');
-  SET @idpersonne := (SELECT LAST_INSERT_ID() );
-INSERT INTO eleve(Classe,TypeP,IdPersonne) VALUES ( 'CP','Eleve',@idpersonne);
-
-#Insert professeur
-
-INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Lucie','Lant','123','parent.svg');
-  SET @idpersonne := (SELECT LAST_INSERT_ID() );
-INSERT INTO professeur(IdPersonne,TypeProf,IdMatiere_Pratiquer) VALUES ( @idpersonne,"Prof",1);
-
-INSERT INTO personne (Nom,Prenom,Mdp,Photo) VALUES ( 'Hanna','Boul','123','parent.svg');
-  SET @idpersonne := (SELECT LAST_INSERT_ID() );
-INSERT INTO professeur(IdPersonne,TypeProf,IdMatiere_Pratiquer) VALUES ( @idpersonne,"Prof",2);
-
 #Insert matiere
 
 INSERT INTO matiere(Nom) VALUES('Français');
 INSERT INTO matiere(Nom) VALUES('Mathematique');
 INSERT INTO matiere(Nom) VALUES('Anglais');
+
+#Insert eleves
+
+INSERT INTO personne (Nom,Prenom,Mdp,Photo,TypeP) VALUES ( 'Jean','Lario','123','child.svg','Eleve');
+  SET @idpersonne := (SELECT LAST_INSERT_ID() );
+INSERT INTO eleve(Classe,IdPersonne) VALUES ( 'CP',@idpersonne);
+
+INSERT INTO personne (Nom,Prenom,Mdp,Photo,TypeP) VALUES ( 'Louis','Lasalle','123','child.svg','Eleve');
+  SET @idpersonne := (SELECT LAST_INSERT_ID() );
+INSERT INTO eleve(Classe,IdPersonne)VALUES ( 'CE',@idpersonne);
+
+INSERT INTO personne (Nom,Prenom,Mdp,Photo,TypeP) VALUES ( 'Marc','Legre','123','child.svg','Eleve');
+  SET @idpersonne := (SELECT LAST_INSERT_ID() );
+INSERT INTO eleve(Classe,IdPersonne) VALUES ( 'CP',@idpersonne);
+
+#Insert professeur
+
+INSERT INTO personne (Nom,Prenom,Mdp,Photo,TypeP) VALUES ( 'Lucie','Lant','123','parent.svg','Prof');
+  SET @idpersonne := (SELECT LAST_INSERT_ID() );
+INSERT INTO professeur(IdPersonne,IdMatiere_Pratiquer) VALUES ( @idpersonne,1);
+
+INSERT INTO personne (Nom,Prenom,Mdp,Photo,TypeP) VALUES ( 'Hanna','Boul','123','parent.svg','Prof');
+  SET @idpersonne := (SELECT LAST_INSERT_ID() );
+INSERT INTO professeur(IdPersonne,IdMatiere_Pratiquer) VALUES ( @idpersonne,2);
+
+
 
 #Insert questionnaire
 

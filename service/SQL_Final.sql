@@ -18,7 +18,6 @@ CREATE INDEX Appartenir_questionnaire0_FK
 CREATE TABLE eleve
 (
   IdPersonne INT         NOT NULL,
-  TypeP        VARCHAR(50) NOT NULL ,
   #IdEleve    INT         NOT NULL,
   Classe     VARCHAR(50) NOT NULL,
   PRIMARY KEY (IdPersonne)
@@ -46,7 +45,8 @@ CREATE TABLE personne
   Nom        VARCHAR(50) NOT NULL,
   Prenom     VARCHAR(50) NOT NULL,
   Mdp        VARCHAR(50) NOT NULL,
-  Photo      VARCHAR(50) NOT NULL
+  Photo      VARCHAR(50) NOT NULL,
+  TypeP      VARCHAR(50) NOT NULL
 )
   ENGINE = InnoDB;
 
@@ -58,7 +58,6 @@ CREATE TABLE professeur
 (
   IdPersonne          INT NOT NULL,
   #IdProfesseur        INT NOT NULL,
-  TypeProf            VARCHAR(50),
   IdMatiere_Pratiquer INT NOT NULL,
   PRIMARY KEY (IdPersonne),
   CONSTRAINT Professeur_Personne_FK

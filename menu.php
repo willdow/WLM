@@ -1,18 +1,29 @@
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link" id="home-tab" href="./home.php">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="profile-tab" href="./choix.php">Mathématiques</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="contact-tab" href="#contact">Français</a>
-    </li>
-</ul>
-<!--
-<div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">.dzedz..</div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-</div>
--->
+
+
+<nav id="menu">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" href="home.php?page=accueil">Accueil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" href="home.php?page=math">Mathematiques</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" href="home.php?page=francais">Francais</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" href="home.php?page=anglais">Anglais</a>
+        </li>
+        <?php
+        if ($_SESSION['TypeP'] == "Prof")
+        {
+            echo "<a class=\"nav-link\" id=\"profile-tab\" href=\"home.php?page=gestion\"><li>Gestion</li></a>";
+            echo "<a class=\"nav-link\" id=\"profile-tab\" href=\"home.php?page=notes\"><li>Notes</li></a>";
+        }
+        ?>
+
+        <!--                    <a href="index.php?page=contact"><li>Contact</li></a>-->
+    </ul>
+</nav>
+
+
