@@ -4,6 +4,7 @@
 <?php
     include('../head.php');
     include('../menu.php');
+echo $_SESSION['TypeP'];
 ?>
 
 <body>
