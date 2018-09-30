@@ -10,7 +10,9 @@
     $nbQuestion = $_POST['nbQuestion'];
     ?>
     <form action="ajout_questionnaire_2.php" method="POST">
-
+        </br></br>
+        <h1>Création des questions </h1>
+        </br></br>
     <?php
     for ($i =1;$i<=$nbQuestion;$i++)
     {
@@ -18,7 +20,7 @@
 
         <div class="card block_question">
             <div class="form-group">
-                <label for="question">Question : </label>
+                <label for="question">Question <?php  echo $i; ?> : </label>
                 <input type="text" class="form-control" id="question" name="question<?php  echo $i; ?>">
             </div>
             <div class="form-group">
