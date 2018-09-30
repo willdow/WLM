@@ -71,4 +71,24 @@ class Modele
         $result = $req->fetch();
         return $result;
     }
+
+    public function insert($tab,$table)
+    {
+        $donnees=array();
+        $parametres=array();
+        foreach($tab as $cle=>$valeur)
+        {
+            $parametres[]=":".$cle;
+            $donnees[":".$cle] = $valeur;
+        }
+        $chaine=implode(",",$parametres);
+        $requete="INSERT INTO  ".$table."  VALUES(NULL,".$chaine.");";
+        if($this->base!=null)
+        {
+            $this->base->query($requete);
+            //$insert->execute($donnees);
+        }
+    }
+
+
 }
