@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 
-<?php include('../head.php'); ?>
+<?php
+
+    include('../head.php');
+    session_start();
+?>
 
 <body>
     <?php
-        include('../menu.php');
         if (isset($_POST['valider'])){
 
             $id = $_POST['id'];
+            $mdp = $_POST['mdp'];
+            $controleur = new Controleur();
 
-          /*  $controleur = new Controleur();
-
-            $controleur->connexion($id);*/
-
+            $controleur->connexion($id,$mdp,$base);
         }
+    include('../menu.php');
     ?>
     <div class="container ">
         <div class="row">
@@ -58,3 +61,45 @@
 </body>
 
 </html>
+
+
+<?php
+$_SESSION['id'] = 1;
+
+if ($_SESSION['id'] <> "")
+{
+    if (isset($_GET['page']))
+    {
+        echo "aa";
+        $page = $_GET['page'];
+    }
+    else
+    {
+        $page = "NAN";
+    }
+
+
+    switch ($page) {
+        case "accueil":
+            header('Location: home.php');
+            break;
+
+        case "math":
+
+            //$matiere = "math";
+            header('Location: choix.php?idMatiere=2');
+            break;
+
+        case "francais":
+            header('Location: choix.php?idMatiere=1');
+            break;
+
+        case "anglais":
+            header('Location: choix.php?idMatiere=3');
+            break;
+    }
+}
+
+
+
+?>
