@@ -12,9 +12,9 @@
             <h1>Connexion</h1>
             <div class="form-group">
                 <i class="far fa-user"></i>
-                Ton ID : <input class="form-control" type="text" name="id" id="id" /><br />
+                Ton ID : <input class="form-control" type="text" name="id" id="id" required /><br />
                 <i class="fas fa-unlock-alt"></i>
-                Ton Mot de passe : <input class="form-control" type="text" name="mdp" id="mdp" />
+                Ton Mot de passe : <input class="form-control" type="password" name="mdp" id="mdp" required/>
                 <p id="erreurPrenom"></p><br />
                 <input class="btn btn-primary" id="valider" name="valider" type="submit" value="Se connecter" />
             </div>
