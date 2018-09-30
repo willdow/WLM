@@ -97,3 +97,8 @@
      max-width: 300px;
      border-radius: 48%;
  }
+
+.block_question
+{
+    color: red;
+}

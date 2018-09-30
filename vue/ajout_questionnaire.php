@@ -14,7 +14,7 @@
             <label for="nbQuestion">Nombre de questions</label>
             <input type="number" min="1" max="10" class="form-control" name="nbQuestion" id="nbQuestion">
         </div>
-        <button type="submit" class="btn btn-primary">Creer</button>
+        <button type="submit" name="creer_quizz" class="btn btn-primary">Creer</button>
     </form>
     <?php include('../footer.php'); ?>
 </body>
