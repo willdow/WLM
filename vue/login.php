@@ -3,7 +3,7 @@
 
 <?php
     include('../head.php');
-    session_start();
+    //session_start();
 ?>
 <body>
     <div class="container contenu">

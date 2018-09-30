@@ -4,7 +4,7 @@
 <?php
 
     include('../head.php');
-    session_start();
+
 ?>
 
 <body>
@@ -17,6 +17,7 @@
 
             $controleur->connexion($id,$mdp,$base);
         }
+        echo $_SESSION['TypeP'];
     include('../menu.php');
     ?>
     <div class="container ">
@@ -96,6 +97,9 @@ if ($_SESSION['id'] <> "")
 
         case "anglais":
             header('Location: choix.php?idMatiere=3');
+            break;
+        case "gestion":
+            header('Location: ajout_questionnaire.php');
             break;
     }
 }
