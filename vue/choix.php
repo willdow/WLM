@@ -10,7 +10,6 @@ echo $_SESSION['TypeP'];
 <body>
 
 <div class="container ">
-    <h1 class="titreMatiere welcome">Les Mathématiques</h1>
     <div class="row choix">
 
     <?php
