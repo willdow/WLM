@@ -89,13 +89,48 @@
 
 }
 
-.custom-control-label
-{
-     color: #EDB613 !important;
-     border: 1px solid #EDB613;
-     padding: 30px 100px;
-     max-width: 300px;
-     border-radius: 48%;
- }
+.custom-control-label {
+    color: #EDB613 !important;
+    border: 1px solid #EDB613;
+    padding: 30px 100px;
+    max-width: 300px;
+    border-radius: 48%;
+    cursor: pointer;
+}
 
+.custom-control-label:hover,
+.custom-control-label:focus,
+.custom-control-label:active {
+    background: #EDB613;
+    color: white !important;
+}
 
+.titreQuestionnaire {
+    margin-top: 30px;
+}
+
+.custom-radio .custom-control-label::before {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.one_reponse {
+    float: left;
+}
+
+.validerReponse {
+    margin: 30px;
+}
+
+.question {
+    margin: 20px;
+}
+
+.one_reponse:first-child {
+
+    margin-left: 25%;
+
+}

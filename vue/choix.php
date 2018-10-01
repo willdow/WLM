@@ -10,7 +10,7 @@ echo $_SESSION['TypeP'];
 <body>
 
 <div class="container ">
-    <div class="row choix">
+    <div class="row choix welcome">
 
     <?php
 
